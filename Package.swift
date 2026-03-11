@@ -12,24 +12,30 @@
 import PackageDescription
 
 let package = Package(
-  name: "SwiftProtobuf",
+  name: "GSSwiftProtobuf",
   products: [
     .executable(name: "protoc-gen-swift", targets: ["protoc-gen-swift"]),
-    .library(name: "SwiftProtobuf", targets: ["SwiftProtobuf"]),
-    .library(name: "SwiftProtobufPluginLibrary", targets: ["SwiftProtobufPluginLibrary"]),
+    .library(name: "GSSwiftProtobuf", targets: ["GSSwiftProtobuf"]),
+    .library(name: "GSSwiftProtobufPluginLibrary", targets: ["GSSwiftProtobufPluginLibrary"]),
   ],
   targets: [
-    .target(name: "SwiftProtobuf"),
-    .target(name: "SwiftProtobufPluginLibrary",
-            dependencies: ["SwiftProtobuf"]),
+    .target(name: "GSSwiftProtobuf",
+            path: "Sources/SwiftProtobuf"),
+    .target(name: "GSSwiftProtobufPluginLibrary",
+            dependencies: ["GSSwiftProtobuf"],
+            path: "Sources/SwiftProtobufPluginLibrary"),
     .target(name: "protoc-gen-swift",
-            dependencies: ["SwiftProtobufPluginLibrary", "SwiftProtobuf"]),
+            dependencies: ["GSSwiftProtobufPluginLibrary", "GSSwiftProtobuf"],
+            path: "Sources/protoc-gen-swift"),
     .target(name: "Conformance",
-            dependencies: ["SwiftProtobuf"]),
+            dependencies: ["GSSwiftProtobuf"],
+            path: "Sources/Conformance"),
     .testTarget(name: "SwiftProtobufTests",
-                dependencies: ["SwiftProtobuf"]),
+                dependencies: ["GSSwiftProtobuf"],
+                path: "Tests/SwiftProtobufTests"),
     .testTarget(name: "SwiftProtobufPluginLibraryTests",
-                dependencies: ["SwiftProtobufPluginLibrary"]),
+                dependencies: ["GSSwiftProtobufPluginLibrary"],
+                path: "Tests/SwiftProtobufPluginLibraryTests"),
   ],
   swiftLanguageVersions: [.v4, .v4_2, .version("5")]
 )
