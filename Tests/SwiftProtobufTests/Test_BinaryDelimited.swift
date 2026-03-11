@@ -10,7 +10,7 @@
 
 import Foundation
 import XCTest
-import SwiftProtobuf
+import GSSwiftProtobuf
 
 class Test_BinaryDelimited: XCTestCase {
 

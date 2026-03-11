@@ -14,7 +14,7 @@
 
 import Foundation
 import XCTest
-import SwiftProtobuf
+import GSSwiftProtobuf
 
 class Test_JSONEncodingOptions: XCTestCase {
 

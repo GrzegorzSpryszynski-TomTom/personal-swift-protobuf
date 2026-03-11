@@ -8,7 +8,7 @@
 //
 // -----------------------------------------------------------------------------
 
-import SwiftProtobufPluginLibrary
+import GSSwiftProtobufPluginLibrary
 
 // The file attempts to isolate the decisions around when to use heap based
 // storage vs. inlining it into the value times. At the moment the decicions

@@ -14,7 +14,7 @@
 
 import Foundation
 import XCTest
-import SwiftProtobuf
+import GSSwiftProtobuf
 
 class Test_TextFormat_WKT_proto3: XCTestCase, PBTestHelpers {
     typealias MessageTestType = ProtobufUnittest_TestWellKnownTypes

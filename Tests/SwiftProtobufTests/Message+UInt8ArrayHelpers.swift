@@ -15,10 +15,10 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobuf
+import GSSwiftProtobuf
 
-extension SwiftProtobuf.Message {
-    init(serializedBytes: [UInt8], extensions: SwiftProtobuf.SimpleExtensionMap? = nil) throws {
+extension GSSwiftProtobuf.Message {
+    init(serializedBytes: [UInt8], extensions: GSSwiftProtobuf.SimpleExtensionMap? = nil) throws {
         try self.init(serializedData: Data(serializedBytes), extensions: extensions)
     }
 

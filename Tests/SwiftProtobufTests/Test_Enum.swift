@@ -16,7 +16,7 @@
 
 import Foundation
 import XCTest
-import SwiftProtobuf
+import GSSwiftProtobuf
 
 class Test_Enum: XCTestCase, PBTestHelpers {
     typealias MessageTestType = Proto3Unittest_TestAllTypes

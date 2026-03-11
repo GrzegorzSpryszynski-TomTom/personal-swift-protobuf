@@ -12,7 +12,7 @@
 ///
 // ----------------------------------------------------------------------------
 
-import SwiftProtobuf
+import GSSwiftProtobuf
 
 struct Version {
     // The "compatibility version" of the runtime library, which must be

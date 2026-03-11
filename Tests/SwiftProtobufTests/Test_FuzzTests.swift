@@ -50,10 +50,7 @@ class Test_FuzzTests: XCTestCase {
   }
 
   func assertTextFormatFails(_ asBytes: [UInt8], file: XCTestFileArgType = #file, line: UInt = #line) {
-    guard let str = String(data: Data(asBytes), encoding: .utf8) else {
-      XCTFail("Failed to make a string", file: file, line: line)
-      return
-    }
+    let str = String(decoding: asBytes, as: UTF8.self)
     XCTAssertThrowsError(
       try Fuzz_Testing_Message(textFormatString: str, extensions: Fuzz_Testing_FuzzTesting_Extensions),
       file: file, line: line)
@@ -66,10 +63,7 @@ class Test_FuzzTests: XCTestCase {
   }
 
   func assertTextFormatSucceeds(_ asBytes: [UInt8], file: XCTestFileArgType = #file, line: UInt = #line) {
-    guard let str = String(data: Data(asBytes), encoding: .utf8) else {
-      XCTFail("Failed to make a string", file: file, line: line)
-      return
-    }
+    let str = String(decoding: asBytes, as: UTF8.self)
     XCTAssertNoThrow(
       try Fuzz_Testing_Message(textFormatString: str, extensions: Fuzz_Testing_FuzzTesting_Extensions),
       file: file, line: line)
@@ -149,7 +143,7 @@ class Test_FuzzTests: XCTestCase {
       0xa9, 0xa9, 0xa9, 0xa9, 0xa9, 0xa9, 0xa9, 0xa9, 0xa9, 0xa9, 0xa9, 0xa9,
       0xa9, 0xa9, 0xa9, 0xa9, 0x31, 0x27, 0x3e,
     ]
-    let str = String(data: Data(bytes), encoding: .utf8)!
+    let str = String(decoding: bytes, as: UTF8.self)
     let msg = try! Fuzz_Testing_Message(textFormatString: str, extensions: Fuzz_Testing_FuzzTesting_Extensions)
     let _ = msg.textFormatString()
   }

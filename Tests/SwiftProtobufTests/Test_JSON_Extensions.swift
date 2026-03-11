@@ -14,11 +14,11 @@
 
 import Foundation
 import XCTest
-import SwiftProtobuf
+import GSSwiftProtobuf
 
 class Test_JSON_Extensions: XCTestCase, PBTestHelpers {
     typealias MessageTestType = ProtobufUnittest_TestAllExtensions
-    var extensions = SwiftProtobuf.SimpleExtensionMap()
+    var extensions = GSSwiftProtobuf.SimpleExtensionMap()
 
     override func setUp() {
         // Start with all the extensions from the unittest.proto file:

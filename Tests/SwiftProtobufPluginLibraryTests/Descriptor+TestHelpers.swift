@@ -8,8 +8,8 @@
 //
 // -----------------------------------------------------------------------------
 
-import SwiftProtobuf
-import SwiftProtobufPluginLibrary
+import GSSwiftProtobuf
+import GSSwiftProtobufPluginLibrary
 
 extension Google_Protobuf_FileDescriptorProto {
   init(name: String, dependencies: [String] = [], publicDependencies: [Int32] = []) {

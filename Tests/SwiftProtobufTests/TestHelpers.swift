@@ -14,7 +14,7 @@
 
 import XCTest
 import Foundation
-import SwiftProtobuf
+import GSSwiftProtobuf
 
 typealias XCTestFileArgType = StaticString
 
@@ -22,7 +22,7 @@ protocol PBTestHelpers {
     associatedtype MessageTestType
 }
 
-extension PBTestHelpers where MessageTestType: SwiftProtobuf.Message & Equatable {
+extension PBTestHelpers where MessageTestType: GSSwiftProtobuf.Message & Equatable {
 
     private func string(from data: Data) -> String {
         return "[" + data.map { String($0) }.joined(separator: ", ") + "]"

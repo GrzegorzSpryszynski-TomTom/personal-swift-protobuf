@@ -2,8 +2,8 @@ import Foundation
 import PackagePlugin
 
 @main
-struct SwiftProtobufPlugin {
-    /// Errors thrown by the `SwiftProtobufPlugin`
+struct GSSwiftProtobufPlugin {
+    /// Errors thrown by the `GSSwiftProtobufPlugin`
     enum PluginError: Error, CustomStringConvertible {
         /// Indicates that the target where the plugin was applied to was not `SourceModuleTarget`.
         case invalidTarget(Target)
@@ -247,7 +247,7 @@ struct SwiftProtobufPlugin {
     }
 }
 
-extension SwiftProtobufPlugin: BuildToolPlugin {
+extension GSSwiftProtobufPlugin: BuildToolPlugin {
     func createBuildCommands(
         context: PluginContext,
         target: Target
@@ -266,7 +266,7 @@ extension SwiftProtobufPlugin: BuildToolPlugin {
 #if canImport(XcodeProjectPlugin)
 import XcodeProjectPlugin
 
-extension SwiftProtobufPlugin: XcodeBuildToolPlugin {
+extension GSSwiftProtobufPlugin: XcodeBuildToolPlugin {
     func createBuildCommands(
         context: XcodePluginContext,
         target: XcodeTarget

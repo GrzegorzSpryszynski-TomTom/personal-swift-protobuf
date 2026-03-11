@@ -9,7 +9,7 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobuf
+import GSSwiftProtobuf
 
 extension FileDescriptor: ProvidesSourceCodeLocation {
   public var sourceCodeInfoLocation: Google_Protobuf_SourceCodeInfo.Location? {

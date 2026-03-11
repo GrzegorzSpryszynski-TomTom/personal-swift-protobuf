@@ -13,7 +13,7 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobuf
+import GSSwiftProtobuf
 
 /// Scope for helpers about the library.
 public enum SwiftProtobufInfo {

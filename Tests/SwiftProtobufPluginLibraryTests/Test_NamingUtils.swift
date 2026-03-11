@@ -9,8 +9,8 @@
 // -----------------------------------------------------------------------------
 
 import XCTest
-import SwiftProtobuf
-@testable import SwiftProtobufPluginLibrary
+import GSSwiftProtobuf
+@testable import GSSwiftProtobufPluginLibrary
 
 class Test_NamingUtils: XCTestCase {
 

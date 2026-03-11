@@ -18,7 +18,7 @@
 import Foundation
 import XCTest
 
-import SwiftProtobuf
+import GSSwiftProtobuf
 
 class Test_AllTypes: XCTestCase, PBTestHelpers {
     typealias MessageTestType = ProtobufUnittest_TestAllTypes

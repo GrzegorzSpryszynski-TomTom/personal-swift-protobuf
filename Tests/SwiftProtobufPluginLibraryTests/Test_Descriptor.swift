@@ -9,8 +9,8 @@
 // -----------------------------------------------------------------------------
 
 import XCTest
-import SwiftProtobuf
-import SwiftProtobufPluginLibrary
+import GSSwiftProtobuf
+import GSSwiftProtobufPluginLibrary
 
 class Test_Descriptor: XCTestCase {
 

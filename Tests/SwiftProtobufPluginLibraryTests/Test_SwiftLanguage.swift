@@ -13,7 +13,7 @@
 // -----------------------------------------------------------------------------
 
 import XCTest
-import SwiftProtobufPluginLibrary
+import GSSwiftProtobufPluginLibrary
 
 class Test_SwiftLanguage: XCTestCase {
     func testIsValidSwiftIdentifier() {
