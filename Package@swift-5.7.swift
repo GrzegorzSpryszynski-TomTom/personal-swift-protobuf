@@ -14,7 +14,7 @@ import PackageDescription
 let package = Package(
   name: "GSSwiftProtobuf",
   products: [
-    .executable(name: "protoc-gen-swift", targets: ["protoc-gen-swift"]),
+    .executable(name: "gs-protoc-gen-swift", targets: ["gs-protoc-gen-swift"]),
     .library(name: "GSSwiftProtobuf", targets: ["GSSwiftProtobuf"]),
     .library(name: "GSSwiftProtobufPluginLibrary", targets: ["GSSwiftProtobufPluginLibrary"]),
     .plugin(
@@ -28,7 +28,7 @@ let package = Package(
     .target(name: "GSSwiftProtobufPluginLibrary",
       dependencies: ["GSSwiftProtobuf"],
       path: "Sources/SwiftProtobufPluginLibrary"),
-    .executableTarget(name: "protoc-gen-swift",
+    .executableTarget(name: "gs-protoc-gen-swift",
       dependencies: ["GSSwiftProtobufPluginLibrary", "GSSwiftProtobuf"],
       path: "Sources/protoc-gen-swift"),
     .executableTarget(name: "Conformance",
