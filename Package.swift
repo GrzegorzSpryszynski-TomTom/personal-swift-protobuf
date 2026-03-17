@@ -15,21 +15,39 @@ let package = Package(
   name: "SwiftProtobuf",
   products: [
     .executable(name: "protoc-gen-swift", targets: ["protoc-gen-swift"]),
-    .library(name: "SwiftProtobuf", targets: ["SwiftProtobuf"]),
+    .library(name: "SwiftProtobuf", targets: ["TomTomSwiftProtobuf"]),
     .library(name: "SwiftProtobufPluginLibrary", targets: ["SwiftProtobufPluginLibrary"]),
   ],
   targets: [
-    .target(name: "SwiftProtobuf"),
-    .target(name: "SwiftProtobufPluginLibrary",
-            dependencies: ["SwiftProtobuf"]),
-    .target(name: "protoc-gen-swift",
-            dependencies: ["SwiftProtobufPluginLibrary", "SwiftProtobuf"]),
-    .target(name: "Conformance",
-            dependencies: ["SwiftProtobuf"]),
-    .testTarget(name: "SwiftProtobufTests",
-                dependencies: ["SwiftProtobuf"]),
-    .testTarget(name: "SwiftProtobufPluginLibraryTests",
-                dependencies: ["SwiftProtobufPluginLibrary"]),
+    .target(
+      name: "TomTomSwiftProtobuf",
+      path: "Sources/SwiftProtobuf"
+    ),
+
+    .target(
+      name: "SwiftProtobufPluginLibrary",
+      dependencies: ["TomTomSwiftProtobuf"]
+    ),
+
+    .target(
+      name: "protoc-gen-swift",
+      dependencies: ["SwiftProtobufPluginLibrary", "TomTomSwiftProtobuf"]
+    ),
+
+    .target(
+      name: "Conformance",
+      dependencies: ["TomTomSwiftProtobuf"]
+    ),
+
+    .testTarget(
+      name: "SwiftProtobufTests",
+      dependencies: ["TomTomSwiftProtobuf"]
+    ),
+
+    .testTarget(
+      name: "SwiftProtobufPluginLibraryTests",
+      dependencies: ["SwiftProtobufPluginLibrary"]
+    ),
   ],
   swiftLanguageVersions: [.v4, .v4_2, .version("5")]
 )
