@@ -13,8 +13,8 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobufPluginLibrary
-import SwiftProtobuf
+import TTSwiftProtobufPluginLibrary
+import TTSwiftProtobuf
 
 /// The name of the case used to represent unrecognized values in proto3.
 /// This case has an associated value containing the raw integer value.

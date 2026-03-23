@@ -20,16 +20,16 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobuf
-import SwiftProtobufPluginLibrary
+import TTSwiftProtobuf
+import TTSwiftProtobufPluginLibrary
 
 struct GeneratorPlugin: CodeGenerator {
 
   func generate(
-    files: [SwiftProtobufPluginLibrary.FileDescriptor],
+    files: [TTSwiftProtobufPluginLibrary.FileDescriptor],
     parameter: CodeGeneratorParameter,
-    protoCompilerContext: SwiftProtobufPluginLibrary.ProtoCompilerContext,
-    generatorOutputs: SwiftProtobufPluginLibrary.GeneratorOutputs
+    protoCompilerContext: TTSwiftProtobufPluginLibrary.ProtoCompilerContext,
+    generatorOutputs: TTSwiftProtobufPluginLibrary.GeneratorOutputs
   ) throws {
     let options = try GeneratorOptions(parameter: parameter)
 
@@ -48,15 +48,15 @@ struct GeneratorPlugin: CodeGenerator {
     }
   }
 
-  var supportedFeatures: [SwiftProtobufPluginLibrary.Google_Protobuf_Compiler_CodeGeneratorResponse.Feature] = [
+  var supportedFeatures: [TTSwiftProtobufPluginLibrary.Google_Protobuf_Compiler_CodeGeneratorResponse.Feature] = [
     .proto3Optional,
   ]
 
-  var version: String? { return "\(SwiftProtobuf.Version.versionString)" }
+  var version: String? { return "\(TTSwiftProtobuf.Version.versionString)" }
   var copyrightLine: String? { return "\(Version.copyright)" }
   var projectURL: String? { return "https://github.com/apple/swift-protobuf" }
 
-  private func auditProtoCVersion(context: SwiftProtobufPluginLibrary.ProtoCompilerContext) {
+  private func auditProtoCVersion(context: TTSwiftProtobufPluginLibrary.ProtoCompilerContext) {
     guard context.version != nil else {
       Stderr.print("WARNING: unknown version of protoc, use 3.2.x or later to ensure JSON support is correct.")
       return

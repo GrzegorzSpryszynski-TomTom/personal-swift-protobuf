@@ -8,7 +8,7 @@
 //
 // -----------------------------------------------------------------------------
 
-import SwiftProtobufPluginLibrary
+import TTSwiftProtobufPluginLibrary
 
 class GeneratorOptions {
   enum OutputNaming {

@@ -15,7 +15,7 @@
 
 import Foundation
 import XCTest
-import SwiftProtobuf
+import TTSwiftProtobuf
 
 // Verify that unknown fields are correctly preserved by
 // proto2 messages.

@@ -18,7 +18,7 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobuf
+import TTSwiftProtobuf
 
 ///
 /// We won't generate types (structs, enums) with these names:

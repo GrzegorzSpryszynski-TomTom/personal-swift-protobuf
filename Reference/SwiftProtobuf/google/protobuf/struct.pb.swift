@@ -44,8 +44,8 @@ import Foundation
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+fileprivate struct _GeneratedWithProtocGenSwiftVersion: TTSwiftProtobuf.ProtobufAPIVersionCheck {
+  struct _2: TTSwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
@@ -53,7 +53,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 /// `Value` type union.
 ///
 /// The JSON representation for `NullValue` is JSON `null`.
-enum Google_Protobuf_NullValue: SwiftProtobuf.Enum {
+enum Google_Protobuf_NullValue: TTSwiftProtobuf.Enum {
   typealias RawValue = Int
 
   /// Null value.
@@ -100,14 +100,14 @@ extension Google_Protobuf_NullValue: CaseIterable {
 ///
 /// The JSON representation for `Struct` is JSON object.
 struct Google_Protobuf_Struct {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // TTSwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   /// Unordered map of dynamically typed values.
   var fields: Dictionary<String,Google_Protobuf_Value> = [:]
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  var unknownFields = TTSwiftProtobuf.UnknownStorage()
 
   init() {}
 }
@@ -119,7 +119,7 @@ struct Google_Protobuf_Struct {
 ///
 /// The JSON representation for `Value` is JSON value.
 struct Google_Protobuf_Value {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // TTSwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
@@ -180,7 +180,7 @@ struct Google_Protobuf_Value {
     set {kind = .listValue(newValue)}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  var unknownFields = TTSwiftProtobuf.UnknownStorage()
 
   /// The kind of value.
   enum OneOf_Kind: Equatable {
@@ -240,14 +240,14 @@ struct Google_Protobuf_Value {
 ///
 /// The JSON representation for `ListValue` is JSON array.
 struct Google_Protobuf_ListValue {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // TTSwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   /// Repeated field of dynamically typed values.
   var values: [Google_Protobuf_Value] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  var unknownFields = TTSwiftProtobuf.UnknownStorage()
 
   init() {}
 }
@@ -264,33 +264,33 @@ extension Google_Protobuf_ListValue: @unchecked Sendable {}
 
 fileprivate let _protobuf_package = "google.protobuf"
 
-extension Google_Protobuf_NullValue: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+extension Google_Protobuf_NullValue: TTSwiftProtobuf._ProtoNameProviding {
+  static let _protobuf_nameMap: TTSwiftProtobuf._NameMap = [
     0: .same(proto: "NULL_VALUE"),
   ]
 }
 
-extension Google_Protobuf_Struct: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Google_Protobuf_Struct: TTSwiftProtobuf.Message, TTSwiftProtobuf._MessageImplementationBase, TTSwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Struct"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  static let _protobuf_nameMap: TTSwiftProtobuf._NameMap = [
     1: .same(proto: "fields"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  mutating func decodeMessage<D: TTSwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,Google_Protobuf_Value>.self, value: &self.fields) }()
+      case 1: try { try decoder.decodeMapField(fieldType: TTSwiftProtobuf._ProtobufMessageMap<TTSwiftProtobuf.ProtobufString,Google_Protobuf_Value>.self, value: &self.fields) }()
       default: break
       }
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  func traverse<V: TTSwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.fields.isEmpty {
-      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,Google_Protobuf_Value>.self, value: self.fields, fieldNumber: 1)
+      try visitor.visitMapField(fieldType: TTSwiftProtobuf._ProtobufMessageMap<TTSwiftProtobuf.ProtobufString,Google_Protobuf_Value>.self, value: self.fields, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -302,9 +302,9 @@ extension Google_Protobuf_Struct: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension Google_Protobuf_Value: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Google_Protobuf_Value: TTSwiftProtobuf.Message, TTSwiftProtobuf._MessageImplementationBase, TTSwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Value"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  static let _protobuf_nameMap: TTSwiftProtobuf._NameMap = [
     1: .standard(proto: "null_value"),
     2: .standard(proto: "number_value"),
     3: .standard(proto: "string_value"),
@@ -313,7 +313,7 @@ extension Google_Protobuf_Value: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     6: .standard(proto: "list_value"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  mutating func decodeMessage<D: TTSwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -382,7 +382,7 @@ extension Google_Protobuf_Value: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  func traverse<V: TTSwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
@@ -424,13 +424,13 @@ extension Google_Protobuf_Value: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension Google_Protobuf_ListValue: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Google_Protobuf_ListValue: TTSwiftProtobuf.Message, TTSwiftProtobuf._MessageImplementationBase, TTSwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ListValue"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  static let _protobuf_nameMap: TTSwiftProtobuf._NameMap = [
     1: .same(proto: "values"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  mutating func decodeMessage<D: TTSwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -442,7 +442,7 @@ extension Google_Protobuf_ListValue: SwiftProtobuf.Message, SwiftProtobuf._Messa
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  func traverse<V: TTSwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.values.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.values, fieldNumber: 1)
     }

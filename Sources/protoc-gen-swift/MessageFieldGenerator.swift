@@ -13,8 +13,8 @@
 ///
 // -----------------------------------------------------------------------------
 import Foundation
-import SwiftProtobufPluginLibrary
-import SwiftProtobuf
+import TTSwiftProtobufPluginLibrary
+import TTSwiftProtobuf
 
 
 class MessageFieldGenerator: FieldGeneratorBase, FieldGenerator {

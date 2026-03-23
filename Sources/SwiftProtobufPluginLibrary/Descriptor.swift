@@ -27,7 +27,7 @@
 //    as the tracking for weak references wouldn't be needed.
 
 import Foundation
-import SwiftProtobuf
+import TTSwiftProtobuf
 
 public final class DescriptorSet {
   public let files: [FileDescriptor]

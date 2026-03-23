@@ -12,41 +12,46 @@
 import PackageDescription
 
 let package = Package(
-  name: "SwiftProtobuf",
+  name: "TomTomSwiftProtobuf",
   products: [
-    .executable(name: "protoc-gen-swift", targets: ["protoc-gen-swift"]),
-    .library(name: "SwiftProtobuf", targets: ["TomTomSwiftProtobuf"]),
-    .library(name: "SwiftProtobufPluginLibrary", targets: ["SwiftProtobufPluginLibrary"]),
+    .executable(name: "tt-protoc-gen-swift", targets: ["tt-protoc-gen-swift"]),
+    .library(name: "TTSwiftProtobuf", targets: ["TTSwiftProtobuf"]),
+    .library(name: "TTSwiftProtobufPluginLibrary", targets: ["TTSwiftProtobufPluginLibrary"]),
   ],
   targets: [
     .target(
-      name: "TomTomSwiftProtobuf",
-      path: "Sources/SwiftProtobuf"
+      name: "TTSwiftProtobuf",
+      path: "Sources/SwiftProtobuf",
     ),
 
     .target(
-      name: "SwiftProtobufPluginLibrary",
-      dependencies: ["TomTomSwiftProtobuf"]
+      name: "TTSwiftProtobufPluginLibrary",
+      dependencies: ["TTSwiftProtobuf"],
+      path: "Sources/SwiftProtobufPluginLibrary",
     ),
 
     .target(
-      name: "protoc-gen-swift",
-      dependencies: ["SwiftProtobufPluginLibrary", "TomTomSwiftProtobuf"]
+      name: "tt-protoc-gen-swift",
+      dependencies: ["TTSwiftProtobufPluginLibrary", "TTSwiftProtobuf"],
+      path: "Sources/tt-protoc-gen-swift",
     ),
 
     .target(
-      name: "Conformance",
-      dependencies: ["TomTomSwiftProtobuf"]
+      name: "TTConformance",
+      dependencies: ["TTSwiftProtobuf"],
+      path: "Sources/Conformance",
     ),
 
     .testTarget(
-      name: "SwiftProtobufTests",
-      dependencies: ["TomTomSwiftProtobuf"]
+      name: "TTSwiftProtobufTests",
+      dependencies: ["TTSwiftProtobuf"],
+      path: "Tests/SwiftProtobufTests",
     ),
 
     .testTarget(
-      name: "SwiftProtobufPluginLibraryTests",
-      dependencies: ["SwiftProtobufPluginLibrary"]
+      name: "TTSwiftProtobufPluginLibraryTests",
+      dependencies: ["TTSwiftProtobufPluginLibrary"],
+      path: "Tests/SwiftProtobufPluginLibraryTests",
     ),
   ],
   swiftLanguageVersions: [.v4, .v4_2, .version("5")]

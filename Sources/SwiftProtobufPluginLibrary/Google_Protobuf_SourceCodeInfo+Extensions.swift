@@ -9,7 +9,7 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobuf
+import TTSwiftProtobuf
 
 extension Google_Protobuf_SourceCodeInfo.Location {
 

@@ -8,7 +8,7 @@
 //
 // -----------------------------------------------------------------------------
 
-import SwiftProtobufPluginLibrary
+import TTSwiftProtobufPluginLibrary
 
 extension FileDescriptor {
   /// True if this file should perserve unknown enums within the enum.

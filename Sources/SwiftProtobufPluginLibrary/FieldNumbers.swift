@@ -13,7 +13,7 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobuf
+import TTSwiftProtobuf
 
 extension Google_Protobuf_FileDescriptorProto {
   struct FieldNumbers {

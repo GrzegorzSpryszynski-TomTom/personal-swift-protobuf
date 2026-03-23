@@ -13,8 +13,8 @@
 ///
 // -----------------------------------------------------------------------------
 import Foundation
-import SwiftProtobufPluginLibrary
-import SwiftProtobuf
+import TTSwiftProtobufPluginLibrary
+import TTSwiftProtobuf
 
 class OneofGenerator {
     /// Custom FieldGenerator that caches come calculated strings, and bridges

@@ -12,35 +12,42 @@
 import PackageDescription
 
 let package = Package(
-  name: "SwiftProtobuf",
+  name: "TomTomSwiftProtobuf",
   products: [
-    .executable(name: "protoc-gen-swift", targets: ["protoc-gen-swift"]),
-    .library(name: "SwiftProtobuf", targets: ["SwiftProtobuf"]),
-    .library(name: "SwiftProtobufPluginLibrary", targets: ["SwiftProtobufPluginLibrary"]),
+    .executable(name: "tt-protoc-gen-swift", targets: ["tt-protoc-gen-swift"]),
+    .library(name: "TTSwiftProtobuf", targets: ["TTSwiftProtobuf"]),
+    .library(name: "TTSwiftProtobufPluginLibrary", targets: ["TTSwiftProtobufPluginLibrary"]),
     .plugin(
-        name: "SwiftProtobufPlugin",
-        targets: ["SwiftProtobufPlugin"]
+        name: "TTSwiftProtobufPlugin",
+        targets: ["TTSwiftProtobufPlugin"]
     ),
   ],
   targets: [
-    .target(name: "SwiftProtobuf"),
-    .target(name: "SwiftProtobufPluginLibrary",
-            dependencies: ["SwiftProtobuf"]),
-    .executableTarget(name: "protoc-gen-swift",
-            dependencies: ["SwiftProtobufPluginLibrary", "SwiftProtobuf"]),
-    .executableTarget(name: "Conformance",
-            dependencies: ["SwiftProtobuf"]),
+    .target(name: "TTSwiftProtobuf",
+            path: "Sources/SwiftProtobuf"),
+    .target(name: "TTSwiftProtobufPluginLibrary",
+            dependencies: ["TTSwiftProtobuf"],
+            path: "Sources/SwiftProtobufPluginLibrary"),
+    .executableTarget(name: "tt-protoc-gen-swift",
+            dependencies: ["TTSwiftProtobufPluginLibrary", "TTSwiftProtobuf"],
+            path: "Sources/protoc-gen-swift"),
+    .executableTarget(name: "TTConformance",
+            dependencies: ["TTSwiftProtobuf"],
+            path: "Sources/Conformance"),
     .plugin(
-        name: "SwiftProtobufPlugin",
+        name: "TTSwiftProtobufPlugin",
         capability: .buildTool(),
         dependencies: [
-            "protoc-gen-swift"
-        ]
+            "tt-protoc-gen-swift"
+        ],
+        path: "Plugins/SwiftProtobufPlugin",
     ),
-    .testTarget(name: "SwiftProtobufTests",
-                dependencies: ["SwiftProtobuf"]),
-    .testTarget(name: "SwiftProtobufPluginLibraryTests",
-                dependencies: ["SwiftProtobufPluginLibrary"]),
+    .testTarget(name: "TTSwiftProtobufTests",
+                dependencies: ["TTSwiftProtobuf"],
+                path: "Tests/SwiftProtobufTests"),
+    .testTarget(name: "TTSwiftProtobufPluginLibraryTests",
+                dependencies: ["TTSwiftProtobufPluginLibrary"],
+                path: "Tests/SwiftProtobufPluginLibraryTests"),
   ],
   swiftLanguageVersions: [.v4, .v4_2, .version("5")]
 )

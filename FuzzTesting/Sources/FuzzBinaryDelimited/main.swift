@@ -2,7 +2,7 @@ import Foundation
 
 import FuzzCommon
 
-import SwiftProtobuf
+import TTSwiftProtobuf
 
 @_cdecl("LLVMFuzzerTestOneInput")
 public func FuzzDelimited(_ start: UnsafeRawPointer, _ count: Int) -> CInt {
