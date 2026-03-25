@@ -15,7 +15,7 @@ let package = Package(
   name: "TomTomSwiftProtobuf",
   products: [
     .executable(name: "tt-protoc-gen-swift", targets: ["tt-protoc-gen-swift"]),
-    .library(name: "TTSwiftProtobuf", targets: ["TTSwiftProtobuf"]),
+    .library(name: "TTSwiftProtobuf", type: .static, targets: ["TTSwiftProtobuf"]),
     .library(name: "TTSwiftProtobufPluginLibrary", targets: ["TTSwiftProtobufPluginLibrary"]),
   ],
   targets: [

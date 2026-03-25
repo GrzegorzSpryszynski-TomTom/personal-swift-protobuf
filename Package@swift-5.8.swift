@@ -15,8 +15,8 @@ let package = Package(
   name: "TomTomSwiftProtobuf",
   products: [
     .executable(name: "tt-protoc-gen-swift", targets: ["tt-protoc-gen-swift"]),
-    .library(name: "TTSwiftProtobuf", targets: ["TTSwiftProtobuf"]),
-    .library(name: "TTSwiftProtobufPluginLibrary", targets: ["TTSwiftProtobufPluginLibrary"]),
+    .library(name: "TTSwiftProtobuf", type: .static, targets: ["TTSwiftProtobuf"]),
+    .library(name: "TTSwiftProtobufPluginLibrary", type: .static, targets: ["TTSwiftProtobufPluginLibrary"]),
     .plugin(
         name: "TTSwiftProtobufPlugin",
         targets: ["TTSwiftProtobufPlugin"]
@@ -24,10 +24,10 @@ let package = Package(
   ],
   targets: [
     .target(name: "TTSwiftProtobuf",
-            path: "Sources/SwiftProtobuf",
-            swiftSettings: [
-                .unsafeFlags(["-enable-library-evolution", "-emit-module-interface"])
-            ]),
+            path: "Sources/SwiftProtobuf"),
+            // swiftSettings: [
+            //     .unsafeFlags(["-enable-library-evolution", "-emit-module-interface"])
+            // ]),
     .target(name: "TTSwiftProtobufPluginLibrary",
             dependencies: ["TTSwiftProtobuf"],
             path: "Sources/SwiftProtobufPluginLibrary"),
