@@ -1,4 +1,4 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.0
 
 // Package.swift
 //
@@ -22,6 +22,13 @@ let package = Package(
     .target(
       name: "TTSwiftProtobuf",
       path: "Sources/SwiftProtobuf",
+      swiftSettings: [
+        // Enables library evolution so this target emits .swiftinterface files.
+        // Required for the file to be bundled inside TomTomSDKProtobuf.xcframework,
+        // allowing consumers to compile against the xcframework binary without
+        // needing a separate copy of TTSwiftProtobuf in their build graph.
+        .unsafeFlags(["-enable-library-evolution", "-emit-module-interface"])
+      ]
     ),
 
     .target(
@@ -54,5 +61,5 @@ let package = Package(
       path: "Tests/SwiftProtobufPluginLibraryTests",
     ),
   ],
-  swiftLanguageVersions: [.v4, .v4_2, .version("5")]
+  swiftLanguageVersions: [.v5]
 )

@@ -24,10 +24,10 @@ let package = Package(
   ],
   targets: [
     .target(name: "TTSwiftProtobuf",
-            path: "Sources/SwiftProtobuf"),
-        //     swiftSettings: [
-        //         .unsafeFlags(["-enable-library-evolution", "-emit-module-interface"])
-        //     ]),
+            path: "Sources/SwiftProtobuf",
+            swiftSettings: [
+                .unsafeFlags(["-enable-library-evolution", "-emit-module-interface"])
+            ]),
     .target(name: "TTSwiftProtobufPluginLibrary",
             dependencies: ["TTSwiftProtobuf"],
             path: "Sources/SwiftProtobufPluginLibrary"),
